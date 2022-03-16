@@ -3,6 +3,7 @@ type QueryStringObj = {
 };
 
 export default function queryString(obj: QueryStringObj) {
-  const entries = Object.entries(obj).map(([key, value]) => `${key}=${value}`);
-  return entries.join('&');
+  return Object.entries(obj)
+    .map(([key, value]) => `${key}=${value}`)
+    .join('&');
 }
