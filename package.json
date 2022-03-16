@@ -1,0 +1,8 @@
+{
+  "name": "javascript-applications-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Renan Garcia <renan.nobregarcia@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
