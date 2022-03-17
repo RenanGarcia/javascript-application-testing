@@ -13,8 +13,8 @@ export const queryString = (obj: QueryStringObj) => {
   return Object.entries(obj).map(keyValueToString).join('&');
 };
 
-export const parse = (qs: string) => {
-  const splited = qs.split('&').map((item) => {
+export const parse = (qs: string): QueryStringObj => {
+  const params = qs.split('&').map((item) => {
     const [key, value] = item.split('=');
     if (value.indexOf(',') > -1) {
       return [key, value.split(',')];
@@ -22,5 +22,5 @@ export const parse = (qs: string) => {
       return [key, value];
     }
   });
-  return Object.fromEntries(splited);
+  return Object.fromEntries(params);
 };
