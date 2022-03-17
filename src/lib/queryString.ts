@@ -9,6 +9,18 @@ const keyValueToString = ([key, value]) => {
   return `${key}=${value}`;
 };
 
-export default function queryString(obj: QueryStringObj) {
+export const queryString = (obj: QueryStringObj) => {
   return Object.entries(obj).map(keyValueToString).join('&');
-}
+};
+
+export const parse = (qs: string) => {
+  const splited = qs.split('&').map((item) => {
+    const [key, value] = item.split('=');
+    if (value.indexOf(',') > -1) {
+      return [key, value.split(',')];
+    } else {
+      return [key, value];
+    }
+  });
+  return Object.fromEntries(splited);
+};
