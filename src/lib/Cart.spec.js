@@ -16,6 +16,9 @@ describe('Cart', () => {
   });
 
   it('Deve exibir um resumo do carrinho', () => {
+    // TODO: Adicionar uma Coca-cola no carrinho antes do expect abaixo
+    // TODO: verificar no expect um total == 10 e quantidade == 1
+    // TODO: modificar o código do arquivo Cart para que todos os testes passem
     expect(Cart.summary()).toEqual({
       total: 0,
       itemsQuantity: 0,
